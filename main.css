@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    overflow: hidden;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.split{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.split h1{
+    color: antiquewhite;
+    text-align: center;
+    z-index: 2;
+}
+.split button{
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    margin-top: 5rem;
+    border: 1px solid wheat;
+    background-color: transparent;
+    transition: transform .5s ease;
+    z-index: 2;
+}
+.split button:hover{
+    border: 0;
+    background-color: antiquewhite;
+    transition: all .5s ease-in-out;
+}
+.split button:hover a{
+    color: #333;
+}
+.split button:active{
+    transform: scale(.8);
+}
+.split button a{
+    color: antiquewhite;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all .5s ease-in-out;
+}
+.right{
+    background: url(img/fashion\ three.jpg) center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%; 
+    object-fit: cover;
+}
+.right::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: rgba(51, 51, 51, 0.7);
+}
+.left{
+    background: url(img/fashion\ four.jpg) center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%; 
+    object-fit: cover;
+}
+.left::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: rgba(51, 51, 51, 0.7);
+}
+.move-right .left{
+    width: 70%;
+}
+.move-right .left::before{
+    width: 70%;
+}
+.move-right .right{
+    width: 30%;
+}
+.move-right .right::before {
+    width: 30%;
+}
+.move-left .left{
+    width: 30%;
+}
+.move-left .left::before{
+    width: 30%;
+}
+.move-left .right{
+    width: 70%;
+}
+.move-left .right::before {
+    width: 70%;
+}
+.split.right,.split.left,.split.right::before,.split.left::before{
+    transition: all 1s;
+}
+@media screen and (max-width: 376px) {
+    .split h1{
+        font-size: 16px;
+    }
+    .split button{
+        padding: .7rem;
+    }
+    .split button a{
+        font-size: 18px;
+    }
+}
